@@ -125,3 +125,5 @@ scale:
     enabled: false
     MinReplicaCount: 1
     MaxReplicaCount: 2
+deployDetails:
+  icapUrl: icap://<>:1344/gw_rebuild
