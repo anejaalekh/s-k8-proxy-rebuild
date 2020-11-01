@@ -20,14 +20,14 @@ application:
   nginx:
     secretName: reverse-proxy-nginx
     env:
-      ALLOWED_DOMAINS: gov.uk.glasswall-icap.com,www.gov.uk.glasswall-icap.com,assets.publishing.service.gov.uk.glasswall-icap.com
+      ALLOWED_DOMAINS: owasp.org.glasswall-icap.com,www.owasp.org.glasswall-icap.com
       ROOT_DOMAIN: glasswall-icap.com
-      SUBFILTER_ENV: ".gov.uk,.gov.uk.glasswall-icap.com  .amazonaws.com,.amazonaws.com.glasswall-icap.com"
+      SUBFILTER_ENV: "owasp.org,owasp.org.glasswall-icap.com
     secrets: {}
   squid:
     secretName: reverse-proxy-squid
     env:
-      ALLOWED_DOMAINS: gov.uk.glasswall-icap.com,www.gov.uk.glasswall-icap.com,assets.publishing.service.gov.uk.glasswall-icap.com
+      ALLOWED_DOMAINS: owasp.org.glasswall-icap.com,www.owasp.org.glasswall-icap.com
       ROOT_DOMAIN: glasswall-icap.com
     secrets: {}
   icap:
@@ -42,12 +42,11 @@ service:
     name: nginx
     type: ClusterIP
     additionalHosts:
-    - www.gov.uk.glasswall-icap.com
-    - assets.publishing.service.gov.uk.glasswall-icap.com
+    - www.owsp.org.glasswall-icap.com
     commonName:
     externalPort: 443
     internalPort: 443
-    url: gov.uk.glasswall-icap.com
+    url: owasp.org.glasswall-icap.com
   squid:
     enabled: true
     annotations: {}
